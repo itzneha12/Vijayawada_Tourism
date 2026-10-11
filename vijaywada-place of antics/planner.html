@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner | Vijayawada</title>
+    <link rel="stylesheet" href="planner.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <span class="brand">VIJAYAWADA <span>TOURISM</span></span>
+    </header>
+
+    <main class="page-container">
+
+        <section class="planner-panel">
+            <div class="intro">
+                <p class="eyebrow">08 — TRIP PLANNER</p>
+                <h1>Don't know<br>where<br>to start?</h1>
+                <p class="description">
+                    Tell us how much time you have and what you like.
+                    We'll help you plan your Vijayawada experience.
+                </p>
+            </div>
+
+            <div class="planner-form">
+
+                <div class="form-group">
+                    <p class="field-label">HOW LONG ARE YOU STAYING?</p>
+                    <div class="choice-group duration-options">
+                        <button type="button" class="choice active" data-days="1">1 Day</button>
+                        <button type="button" class="choice" data-days="2">2 Days</button>
+                        <button type="button" class="choice" data-days="3">3+ Days</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p class="field-label">WHAT ARE YOU INTERESTED IN?</p>
+                    <div class="choice-group interest-options">
+                        <button type="button" class="choice interest" data-interest="Temples">🙏 Temples</button>
+                        <button type="button" class="choice interest" data-interest="Food">🍽️ Food</button>
+                        <button type="button" class="choice interest" data-interest="Nature">🌿 Nature</button>
+                        <button type="button" class="choice interest" data-interest="History">🏛️ History</button>
+                        <button type="button" class="choice interest" data-interest="Shopping">🛍️ Shopping</button>
+                    </div>
+                </div>
+
+                <button type="button" id="generatePlan" class="generate-button">
+                    Create My Trip ✨
+                </button>
+
+                <p class="form-note">Choose one or more interests to personalise your trip.</p>
+            </div>
+        </section>
+
+        <section id="results" class="results-section" aria-live="polite" hidden>
+            <div class="results-heading">
+                <div>
+                    <p class="eyebrow">YOUR VIJAYAWADA EXPERIENCE</p>
+                    <h2>Your trip, planned.</h2>
+                    <p id="resultsDescription"></p>
+                </div>
+                <button type="button" id="editPlan" class="edit-button">← Edit choices</button>
+            </div>
+
+            <div id="itinerary" class="itinerary"></div>
+
+            <p class="results-note">
+                These are suggested itineraries. Travel times and opening hours may vary;
+                check current timings before visiting.
+            </p>
+        </section>
+
+        <footer class="page-footer">
+            <a href="places.html">Explore Places</a>
+            <span>Discover something wonderful in Vijayawada.</span>
+        </footer>
+
+    </main>
+
+    <script src="planner.js"></script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f0e9;
+    color: #201e1c;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    padding: 24px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-link,
+.nav-label {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: #d35b35;
+}
+
+.brand {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.brand span {
+    color: #d35b35;
+}
+
+.nav-label {
+    color: #817970;
+    letter-spacing: 1px;
+}
+
+.page-heading {
+    padding: 55px 7% 45px;
+}
+
+.eyebrow,
+.section-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #d35b35;
+}
+
+.eyebrow {
+    margin-bottom: 20px;
+}
+
+.page-heading h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 7vw, 82px);
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -2px;
+}
+
+.heading-text {
+    max-width: 490px;
+    margin-top: 22px;
+    font-size: 14px;
+    color: #77716a;
+}
+
+.shopping-list {
+    padding: 0 7% 65px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.shopping-card {
+    display: grid;
+    grid-template-columns: 44% 56%;
+    min-height: 265px;
+    background: #fff;
+    border: 1px solid #e7e1da;
+    overflow: hidden;
+}
+
+.shopping-image {
+    min-height: 265px;
+    background: #e6ded3;
+    overflow: hidden;
+}
+
+.shopping-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 265px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.shopping-card:hover .shopping-image img {
+    transform: scale(1.035);
+}
+
+.shopping-info {
+    padding: 34px 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.section-label {
+    margin-bottom: 15px;
+}
+
+.shopping-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 3vw, 34px);
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.description {
+    color: #77716a;
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 480px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 17px;
+    margin-top: 18px;
+}
+
+.tags span {
+    font-size: 10px;
+    color: #655e57;
+}
+
+.text-link {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 22px;
+    border-bottom: 1px solid #d35b35;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.text-link:hover {
+    color: #d35b35;
+}
+
+.shopping-tip {
+    padding: 70px 10%;
+    background: #ebe4da;
+}
+
+.shopping-tip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 500;
+    line-height: 1.2;
+    max-width: 620px;
+    margin-bottom: 20px;
+}
+
+.shopping-tip > p:last-child {
+    max-width: 600px;
+    font-size: 13px;
+    color: #77716a;
+}
+
+.closing {
+    text-align: center;
+    background: #29241f;
+    color: #fffaf4;
+    padding: 78px 20px;
+}
+
+.closing > p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #e9b99c;
+    margin-bottom: 20px;
+}
+
+.closing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    margin-bottom: 28px;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #f0d7c5;
+    color: #30251f;
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid #f0d7c5;
+    transition: 0.25s ease;
+}
+
+.home-btn:hover {
+    background: transparent;
+    color: white;
+}
+
+footer {
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 11px;
+}
+
+footer a {
+    font-weight: 700;
+}
+
+footer p {
+    color: #77716a;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .page-heading {
+        padding: 45px 6% 35px;
+    }
+
+    .shopping-list {
+        padding: 0 6% 50px;
+        gap: 24px;
+    }
+
+    .shopping-card {
+        grid-template-columns: 1fr;
+    }
+
+    .shopping-image,
+    .shopping-image img {
+        height: 260px;
+        min-height: 260px;
+    }
+
+    .shopping-info {
+        padding: 28px;
+    }
+
+    .shopping-tip {
+        padding: 55px 7%;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-label {
+        font-size: 9px;
+    }
+
+    .page-heading h1 {
+        font-size: 54px;
+    }
+
+    .shopping-image,
+    .shopping-image img {
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .shopping-info {
+        padding: 24px 21px;
+    }
+
+    .shopping-info h2 {
+        font-size: 28px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}

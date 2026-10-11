@@ -1,0 +1,496 @@
+/* ==============================
+   CAFES PAGE
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f4f0e9;
+    color: #181310;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==============================
+   VARIABLES
+============================== */
+
+:root {
+    --orange: #b75d32;
+    --cream: #f4f0e9;
+    --light: #e9dfd0;
+    --dark: #181310;
+    --muted: #77716a;
+    --white: #ffffff;
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    color: var(--white);
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a {
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #e8b08e;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.category-hero {
+    height: 75vh;
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.category-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("images/cafes.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to top,
+            rgba(24, 19, 16, 0.85),
+            rgba(24, 19, 16, 0.25),
+            rgba(24, 19, 16, 0.25)
+        );
+}
+
+.category-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    width: 100%;
+    padding: 80px 8%;
+    max-width: 900px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e8b08e;
+    margin-bottom: 18px;
+}
+
+.category-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(55px, 8vw, 105px);
+    font-weight: 500;
+    line-height: 0.95;
+    margin-bottom: 25px;
+}
+
+.category-content p {
+    max-width: 600px;
+    font-size: 17px;
+    color: #eee6df;
+}
+
+
+/* ==============================
+   INTRO
+============================== */
+
+.intro {
+    padding: 100px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.intro-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--orange);
+    margin-bottom: 18px;
+}
+
+.intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.intro-text {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 520px;
+}
+
+
+/* ==============================
+   CAFE LIST
+============================== */
+
+.cafes {
+    padding: 40px 8% 110px;
+}
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--orange);
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
+/* ==============================
+   CAFE CARD
+============================== */
+
+.cafe-item {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    min-height: 330px;
+    background: var(--white);
+    margin-bottom: 35px;
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cafe-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(24, 19, 16, 0.12);
+}
+
+.cafe-image {
+    min-height: 330px;
+    background-size: cover;
+    background-position: center;
+}
+
+.cafe-info {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cafe-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 12px;
+}
+
+.cafe-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.cafe-info p {
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 18px;
+}
+
+.cafe-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cafe-meta span {
+    font-size: 13px;
+    color: #5f5852;
+}
+
+
+/* ==============================
+   CAFE VIBE
+============================== */
+
+.vibe-section {
+    background: var(--light);
+    padding: 100px 8%;
+}
+
+.vibe-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.vibe-heading span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--orange);
+}
+
+.vibe-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin-top: 12px;
+}
+
+.vibe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.vibe-card {
+    background: var(--white);
+    padding: 35px;
+    min-height: 200px;
+    transition: transform 0.3s ease;
+}
+
+.vibe-card:hover {
+    transform: translateY(-5px);
+}
+
+.vibe-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.vibe-card p {
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* ==============================
+   TIP
+============================== */
+
+.cafe-tip {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.cafe-tip span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--orange);
+}
+
+.cafe-tip h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 15px auto 20px;
+}
+
+.cafe-tip p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 45px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+footer p {
+    color: #aaa19a;
+    font-size: 13px;
+}
+
+
+/* ==============================
+   REVEAL
+============================== */
+
+.cafe-item,
+.vibe-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.cafe-item.show,
+.vibe-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cafe-item {
+        grid-template-columns: 1fr;
+    }
+
+    .cafe-image {
+        min-height: 300px;
+    }
+
+    .vibe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .category-hero {
+        min-height: 550px;
+    }
+
+    .category-content {
+        padding: 60px 7%;
+    }
+
+    .intro,
+    .cafes,
+    .vibe-section,
+    .cafe-tip {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .cafe-info {
+        padding: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .category-content h1 {
+        font-size: 58px;
+    }
+
+    .category-content p {
+        font-size: 15px;
+    }
+
+    .intro h2,
+    .section-heading h2,
+    .vibe-heading h2,
+    .cafe-tip h2 {
+        font-size: 40px;
+    }
+
+    .cafe-image {
+        min-height: 240px;
+    }
+
+    .cafe-info h3 {
+        font-size: 28px;
+    }
+}

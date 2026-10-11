@@ -1,0 +1,582 @@
+/* ==============================
+   RESTAURANTS PAGE
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #b75d32;
+    --cream: #f4f0e9;
+    --light: #e9dfd0;
+    --dark: #181310;
+    --muted: #77716a;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==============================
+   NAVBAR
+============================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    color: white;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navbar a {
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #e8b08e;
+}
+
+.logo {
+    font-family: "Playfair Display", serif;
+    font-size: 22px !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.category-hero {
+    min-height: 620px;
+    height: 78vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.category-image {
+    position: absolute;
+    inset: 0;
+    background-image: url("images/restaurants.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    will-change: transform;
+}
+
+.category-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(24, 19, 16, 0.88),
+        rgba(24, 19, 16, 0.25),
+        rgba(24, 19, 16, 0.12)
+    );
+}
+
+.category-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    width: 100%;
+    max-width: 950px;
+    padding: 80px 8%;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #e8b08e;
+    margin-bottom: 20px;
+}
+
+.category-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(60px, 8vw, 105px);
+    line-height: 0.98;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.category-content p {
+    font-size: 17px;
+    color: #eee6df;
+    max-width: 580px;
+    margin-bottom: 28px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 23px;
+    border: 1px solid rgba(255,255,255,0.6);
+    color: white;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.hero-button:hover {
+    background: white;
+    color: var(--dark);
+}
+
+
+/* ==============================
+   INTRO
+============================== */
+
+.intro {
+    padding: 110px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.intro-label {
+    color: var(--orange);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 5.5vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.intro-text {
+    max-width: 540px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.intro-text p + p {
+    margin-top: 18px;
+}
+
+
+/* ==============================
+   RESTAURANT LIST
+============================== */
+
+.restaurants {
+    padding: 40px 8% 110px;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 55px;
+}
+
+.section-heading span {
+    color: var(--orange);
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(45px, 5.5vw, 70px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 15px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 470px;
+}
+
+
+/* ==============================
+   RESTAURANT CARD
+============================== */
+
+.restaurant-item {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: white;
+    margin-bottom: 35px;
+    overflow: hidden;
+    min-height: 340px;
+    transition: box-shadow 0.35s ease;
+}
+
+.restaurant-item:hover {
+    box-shadow: 0 18px 45px rgba(24, 19, 16, 0.10);
+}
+
+.restaurant-image {
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.restaurant-item:hover .restaurant-image {
+    background-size: cover;
+}
+
+.restaurant-info {
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.restaurant-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 12px;
+}
+
+.restaurant-info h3 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(27px, 3vw, 36px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.restaurant-info p {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 22px;
+    max-width: 500px;
+}
+
+.restaurant-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.restaurant-tags span {
+    background: var(--cream);
+    padding: 7px 12px;
+    font-size: 11px;
+    color: #62584f;
+    border-radius: 30px;
+}
+
+.text-link {
+    color: var(--orange);
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.text-link:hover {
+    border-color: var(--orange);
+}
+
+
+/* ==============================
+   OCCASIONS
+============================== */
+
+.occasion-section {
+    background: var(--light);
+    padding: 100px 8%;
+}
+
+.occasion-heading {
+    margin-bottom: 45px;
+}
+
+.occasion-heading span {
+    color: var(--orange);
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.occasion-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 12px;
+}
+
+.occasion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.occasion-card {
+    background: white;
+    padding: 35px;
+    min-height: 230px;
+    transition: transform 0.3s ease;
+}
+
+.occasion-card:hover {
+    transform: translateY(-5px);
+}
+
+.occasion-icon {
+    font-size: 27px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.occasion-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.occasion-card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+
+/* ==============================
+   TIP
+============================== */
+
+.restaurant-tip {
+    text-align: center;
+    padding: 110px 8%;
+}
+
+.restaurant-tip > span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--orange);
+}
+
+.restaurant-tip h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(40px, 5.5vw, 65px);
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 20px auto;
+}
+
+.restaurant-tip p {
+    max-width: 590px;
+    margin: 0 auto 28px;
+    color: var(--muted);
+}
+
+.tip-button {
+    display: inline-block;
+    background: var(--dark);
+    color: white;
+    padding: 14px 23px;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.tip-button:hover {
+    background: var(--orange);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 40px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+footer h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+footer p,
+footer a {
+    color: #aaa19a;
+    font-size: 13px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+
+/* ==============================
+   SCROLL REVEAL
+============================== */
+
+.restaurant-item,
+.occasion-card {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+}
+
+.restaurant-item.show,
+.occasion-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 900px) {
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .restaurant-item {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-image {
+        min-height: 300px;
+    }
+
+    .occasion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    .category-hero {
+        min-height: 570px;
+    }
+
+    .category-content {
+        padding: 60px 7%;
+    }
+
+    .intro,
+    .restaurants,
+    .occasion-section,
+    .restaurant-tip {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+    .restaurant-info {
+        padding: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .category-content h1 {
+        font-size: 58px;
+    }
+
+    .category-content p {
+        font-size: 15px;
+    }
+
+    .intro h2,
+    .section-heading h2,
+    .occasion-heading h2,
+    .restaurant-tip h2 {
+        font-size: 40px;
+    }
+
+    .restaurant-image {
+        min-height: 235px;
+    }
+
+    .restaurant-info h3 {
+        font-size: 28px;
+    }
+
+    .restaurant-tags {
+        gap: 7px;
+    }
+
+    .restaurant-tags span {
+        font-size: 10px;
+    }
+}
+
+
+/* ==============================
+   REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

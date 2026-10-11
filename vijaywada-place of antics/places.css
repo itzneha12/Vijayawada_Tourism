@@ -1,0 +1,690 @@
+/* =========================================================
+   PLACES PAGE
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f4ee;
+    color: #181716;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:root {
+    --orange: #e8792f;
+    --cream: #f7f4ee;
+    --dark: #111313;
+    --muted: #77736c;
+    --border: rgba(0,0,0,.12);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.places-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 50px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+}
+
+.back-home {
+    font-size: 12px;
+    opacity: .8;
+}
+
+.back-home:hover {
+    opacity: 1;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-logo span {
+    width: 35px;
+    height: 35px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    font-family: "Playfair Display", serif;
+}
+
+.planner-link {
+    border: 1px solid rgba(255,255,255,.6);
+
+    padding: 11px 16px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ================= HERO ================= */
+
+.places-hero {
+    min-height: 80vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    color: white;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("placescover.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.2)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.75),
+            transparent 65%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(
+        calc(100% - 100px),
+        1300px
+    );
+
+    margin: auto;
+
+    padding-bottom: 90px;
+}
+
+.eyebrow {
+    color: #ffae76;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.hero-content h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        65px,
+        9vw,
+        125px
+    );
+
+    line-height: .88;
+
+    letter-spacing: -5px;
+
+    margin-top: 25px;
+}
+
+.hero-content h1 span {
+    color: #ff9957;
+}
+
+.hero-content p {
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ================= INTRO ================= */
+
+.intro-section {
+    width: min(
+        calc(100% - 80px),
+        1300px
+    );
+
+    margin: auto;
+
+    padding: 120px 0 70px;
+}
+
+.section-label {
+    color: var(--orange);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.intro-grid h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        45px,
+        5vw,
+        70px
+    );
+
+    line-height: 1;
+}
+
+.intro-grid h2 span {
+    color: var(--orange);
+}
+
+.intro-grid p {
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    max-width: 500px;
+}
+
+
+/* ================= PLACES ================= */
+
+.places-section {
+    width: min(
+        calc(100% - 80px),
+        1300px
+    );
+
+    margin: auto;
+
+    padding-bottom: 130px;
+}
+
+
+/* ================= FILTER ================= */
+
+.filter-bar {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 1px solid var(--border);
+
+    background: transparent;
+
+    padding: 13px 20px;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.filter:hover,
+.filter.active {
+    background: var(--dark);
+
+    color: white;
+
+    border-color: var(--dark);
+}
+
+
+/* ================= GRID ================= */
+
+.places-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================= CARD ================= */
+
+.place-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.1);
+}
+
+.place-image {
+    height: 270px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.place-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .7s ease;
+}
+
+.place-card:hover .place-image img {
+    transform: scale(1.06);
+}
+
+.place-tag {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 7px 10px;
+
+    background: white;
+
+    color: var(--dark);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.place-content {
+    padding: 28px;
+}
+
+.place-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.place-top span {
+    font-size: 25px;
+}
+
+.place-top small {
+    color: var(--orange);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.place-content h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+}
+
+.place-content p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    min-height: 62px;
+}
+
+
+/* ================= META ================= */
+
+.place-meta {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid var(--border);
+
+    color: #777;
+
+    font-size: 9px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.explore-button {
+    display: block;
+
+    margin-top: 22px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.explore-button:hover {
+    background: var(--orange);
+}
+
+
+/* ================= CTA ================= */
+
+.planner-cta {
+    background: #e9dfd1;
+
+    padding:
+        100px max(
+            40px,
+            calc((100vw - 1300px) / 2)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.planner-cta > div > span {
+    color: var(--orange);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.planner-cta h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        45px,
+        6vw,
+        75px
+    );
+
+    line-height: .95;
+
+    margin-top: 20px;
+}
+
+.planner-cta h2 em {
+    color: var(--orange);
+
+    font-style: normal;
+}
+
+.planner-cta > a {
+    padding: 18px 25px;
+
+    background: var(--dark);
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.planner-cta > a:hover {
+    background: var(--orange);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #0c0d0d;
+
+    color: white;
+
+    padding:
+        60px max(
+            40px,
+            calc((100vw - 1300px) / 2)
+        ) 25px;
+}
+
+.footer-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.footer-brand > span {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #555;
+
+    display: grid;
+    place-items: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+}
+
+.footer-brand strong {
+    display: block;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+.footer-brand small {
+    color: #666;
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #252525;
+
+    margin-top: 55px;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 10px;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .places-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 750px) {
+
+    .places-nav {
+        padding: 20px;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .hero-content {
+        width: calc(100% - 40px);
+    }
+
+    .intro-section,
+    .places-section {
+        width: calc(100% - 35px);
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .planner-cta {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .hero-content h1 {
+        font-size: 60px;
+
+        letter-spacing: -3px;
+    }
+
+    .places-hero {
+        min-height: 75vh;
+    }
+
+    .filter {
+        padding: 11px 14px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+}

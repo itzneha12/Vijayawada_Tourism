@@ -1,0 +1,746 @@
+
+/* ==========================
+   TEMPLES - VIJAYAWADA
+   ========================== */
+
+:root {
+    --cream: #f8f5ef;
+    --paper: #fffdf9;
+    --dark: #25251f;
+    --muted: #77766e;
+    --gold: #a77b43;
+    --line: #e7e0d5;
+
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+
+/* ==========================
+   HERO
+   ========================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    min-height: 600px;
+    overflow: hidden;
+    background: #39352f;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(25, 21, 16, 0.78) 0%,
+            rgba(25, 21, 16, 0.46) 52%,
+            rgba(25, 21, 16, 0.12) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(25, 21, 16, 0.28),
+            transparent 45%
+        );
+}
+
+
+/* ==========================
+   NAVBAR ON HERO
+   ========================== */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    width: 100%;
+    min-height: 75px;
+    padding: 22px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: transparent;
+}
+
+.back-link,
+.nav-links a {
+    color: rgba(255, 255, 255, 0.93);
+    font-size: 12px;
+    transition: color 0.25s;
+}
+
+.back-link:hover,
+.nav-links a:hover {
+    color: #e4c49b;
+}
+
+.brand,
+.footer-brand {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.brand {
+    color: white;
+}
+
+.brand span,
+.footer-brand span {
+    color: #e4c49b;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+/* ==========================
+   HERO CONTENT
+   ========================== */
+
+.hero-content {
+    position: absolute;
+    z-index: 3;
+
+    top: 50%;
+    left: 9.5%;
+    width: min(650px, 82%);
+
+    transform: translateY(-43%);
+}
+
+.eyebrow,
+.section-label {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero .eyebrow {
+    color: #e4c49b;
+}
+
+.hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(46px, 6.3vw, 76px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 em {
+    color: #e4c49b;
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 450px;
+    margin-top: 22px;
+
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.hero-button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 22px;
+
+    background: #e4c49b;
+    color: #28241e;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: background 0.25s, transform 0.25s;
+}
+
+.hero-button:hover {
+    background: #f0d8b8;
+    transform: translateY(-2px);
+}
+
+.hero-caption {
+    position: absolute;
+    z-index: 3;
+    right: 7%;
+    bottom: 28px;
+
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+/* ==========================
+   INTRODUCTION
+   ========================== */
+
+.intro {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 100px 24px 75px;
+    text-align: center;
+}
+
+.intro h2,
+.section-heading h2,
+.guide-text h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.intro h2 {
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.intro > p:last-child {
+    max-width: 600px;
+    margin: 20px auto 0;
+
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* ==========================
+   TEMPLE SECTION
+   ========================== */
+
+.temple-section {
+    padding: 30px 7% 100px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.section-heading .section-label {
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px, 4vw, 44px);
+}
+
+.heading-note {
+    max-width: 290px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   TEMPLE GRID
+   ========================== */
+
+.temple-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 26px;
+}
+
+.temple-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: var(--paper);
+    border: 1px solid #eee7dd;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.temple-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(55, 43, 27, 0.08);
+}
+
+
+/* TEMPLE IMAGE */
+
+.temple-image {
+    position: relative;
+    display: block;
+    height: 300px;
+    overflow: hidden;
+    background: #e6ded1;
+}
+
+.temple-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.temple-card:hover .temple-image img {
+    transform: scale(1.045);
+}
+
+.temple-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: rgba(255, 253, 249, 0.95);
+    color: var(--dark);
+
+    font-family: var(--serif);
+    font-size: 15px;
+}
+
+.image-arrow {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: #e4c49b;
+    color: var(--dark);
+
+    font-size: 17px;
+    transition: background 0.25s;
+}
+
+.temple-card:hover .image-arrow {
+    background: white;
+}
+
+
+/* TEMPLE DETAILS */
+
+.temple-content {
+    padding: 25px 26px 22px;
+}
+
+.temple-location {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.temple-content h3 {
+    font-family: var(--serif);
+    font-size: 27px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.temple-content > p:not(.temple-location) {
+    min-height: 75px;
+    margin-top: 13px;
+
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.temple-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+
+    border-top: 1px solid var(--line);
+    margin-top: 22px;
+    padding-top: 17px;
+
+    font-size: 10px;
+}
+
+.temple-footer > span {
+    color: var(--muted);
+}
+
+.temple-footer a {
+    color: var(--gold);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.temple-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================
+   VISIT GUIDE
+   ========================== */
+
+.visit-guide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+
+    margin: 0 7% 80px;
+    padding: clamp(30px, 5vw, 60px);
+
+    background: #e9e0d3;
+}
+
+.guide-text {
+    align-self: center;
+}
+
+.guide-text h2 {
+    font-size: clamp(30px, 4vw, 43px);
+}
+
+.guide-text > p:not(.section-label) {
+    margin-top: 18px;
+    color: #6d685f;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.guide-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    justify-content: center;
+}
+
+.tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.tip-icon {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    background: rgba(255, 253, 249, 0.8);
+    color: var(--gold);
+
+    font-size: 19px;
+}
+
+.tip h4 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.tip p {
+    margin-top: 4px;
+    color: #777168;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+
+/* ==========================
+   FOOTER
+   ========================== */
+
+.footer {
+    padding: 45px 20px 25px;
+    text-align: center;
+
+    background: #25251f;
+    color: white;
+}
+
+.footer-brand {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.footer > p:not(.copyright) {
+    margin-top: 10px;
+    color: #b8b5ac;
+    font-size: 11px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+
+    font-size: 11px;
+}
+
+.footer-links a {
+    color: #e0ddd5;
+}
+
+.footer-links a:hover {
+    color: #d3aa75;
+}
+
+.copyright {
+    border-top: 1px solid #414139;
+    padding-top: 20px;
+    color: #aaa79e;
+    font-size: 10px;
+}
+
+
+/* ==========================
+   SCROLL REVEAL
+   ========================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(22px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================
+   TABLET
+   ========================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 20px 5%;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .hero {
+        height: 620px;
+        min-height: 580px;
+    }
+
+    .hero-content {
+        left: 7%;
+        width: 86%;
+    }
+
+    .temple-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .temple-image {
+        height: 230px;
+    }
+
+    .temple-content {
+        padding: 20px;
+    }
+
+    .temple-content h3 {
+        font-size: 23px;
+    }
+
+    .visit-guide {
+        margin-left: 5%;
+        margin-right: 5%;
+        gap: 25px;
+    }
+}
+
+
+/* ==========================
+   MOBILE
+   ========================== */
+
+@media (max-width: 560px) {
+
+    .navbar {
+        padding: 18px 5%;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .back-link,
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .hero {
+        height: 620px;
+        min-height: 580px;
+    }
+
+    .hero-content {
+        left: 7%;
+        width: 86%;
+        transform: translateY(-35%);
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-caption {
+        right: 6%;
+        font-size: 8px;
+    }
+
+    .intro {
+        padding: 70px 22px 55px;
+    }
+
+    .intro h2 {
+        font-size: 32px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .heading-note {
+        margin-top: 12px;
+    }
+
+    .temple-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .temple-image {
+        height: 250px;
+    }
+
+    .temple-content > p:not(.temple-location) {
+        min-height: 0;
+    }
+
+    .visit-guide {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 60px;
+
+        padding: 28px 24px;
+    }
+}
+
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+

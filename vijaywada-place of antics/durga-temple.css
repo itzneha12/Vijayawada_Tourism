@@ -1,0 +1,1239 @@
+/* =========================================================
+   KANAKA DURGA TEMPLE PAGE
+========================================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f7f4ee;
+    color: #181716;
+    overflow-x: hidden;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+:root {
+
+    --dark: #121313;
+
+    --orange: #e8792f;
+
+    --orange-dark: #bd5517;
+
+    --cream: #f7f4ee;
+
+    --muted: #77736c;
+
+    --border: rgba(0,0,0,.12);
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.temple-navbar {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 20;
+
+    padding: 25px 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: white;
+
+}
+
+
+.back-home {
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    opacity: .85;
+
+    transition: .3s;
+
+}
+
+
+.back-home:hover {
+
+    opacity: 1;
+
+    transform: translateX(-4px);
+
+}
+
+
+.mini-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.mini-logo span {
+
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    display: grid;
+
+    place-items: center;
+
+    font-family: "Playfair Display", serif;
+
+}
+
+
+.mini-logo strong {
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.book-button {
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255,255,255,.6);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.book-button:hover {
+
+    background: white;
+
+    color: var(--dark);
+
+}
+
+
+/* ================= HERO ================= */
+
+.temple-hero {
+
+    min-height: 90vh;
+
+    position: relative;
+
+    color: white;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+}
+
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("durga-temple.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.02);
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.78),
+            rgba(0,0,0,.25)
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0,0,0,.75),
+            transparent 60%
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        calc(100% - 100px),
+        1400px
+    );
+
+    margin: auto;
+
+    padding-bottom: 100px;
+
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    color: #ffb27d;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero-content h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        60px,
+        9vw,
+        135px
+    );
+
+    line-height: .88;
+
+    letter-spacing: -5px;
+
+}
+
+
+.hero-content h1 span {
+
+    color: #ff9957;
+
+}
+
+
+.hero-content > p {
+
+    max-width: 570px;
+
+    color: rgba(255,255,255,.78);
+
+    line-height: 1.8;
+
+    margin-top: 30px;
+
+    font-size: 15px;
+
+}
+
+
+.hero-location {
+
+    margin-top: 25px;
+
+    font-size: 12px;
+
+    opacity: .7;
+
+}
+
+
+/* ================= QUICK INFO ================= */
+
+.quick-info {
+
+    width: min(
+        calc(100% - 80px),
+        1300px
+    );
+
+    margin: -45px auto 0;
+
+    position: relative;
+
+    z-index: 5;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    background: white;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+}
+
+
+.info-card {
+
+    padding: 30px;
+
+    border-right: 1px solid var(--border);
+
+}
+
+
+.info-card:last-child {
+
+    border-right: none;
+
+}
+
+
+.info-card span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: var(--orange);
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+
+}
+
+
+.info-card strong {
+
+    display: block;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+}
+
+
+.info-card small {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* ================= SECTIONS ================= */
+
+.page-section {
+
+    width: min(
+        calc(100% - 80px),
+        1300px
+    );
+
+    margin: auto;
+
+    padding-top: 130px;
+
+    padding-bottom: 130px;
+
+}
+
+
+.section-label {
+
+    color: var(--orange);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+}
+
+
+h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        45px,
+        5vw,
+        75px
+    );
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+}
+
+
+h2 span {
+
+    color: var(--orange);
+
+}
+
+
+/* ================= ABOUT ================= */
+
+.about-section {
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+}
+
+
+.about-text {
+
+    padding-top: 5px;
+
+}
+
+
+.about-text p {
+
+    color: var(--muted);
+
+    line-height: 1.9;
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* ================= DARSHAN ================= */
+
+.darshan-section {
+
+    background: #eee4d6;
+
+    width: 100%;
+
+    padding-left: max(
+        40px,
+        calc((100vw - 1300px) / 2)
+    );
+
+    padding-right: max(
+        40px,
+        calc((100vw - 1300px) / 2)
+    );
+
+}
+
+
+.darshan-heading {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: end;
+
+    margin-bottom: 60px;
+
+}
+
+
+.darshan-heading > p {
+
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    max-width: 500px;
+
+}
+
+
+.darshan-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+}
+
+
+.darshan-card {
+
+    background: white;
+
+    padding: 40px;
+
+    min-height: 360px;
+
+    position: relative;
+
+    transition: .4s;
+
+}
+
+
+.darshan-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.card-number {
+
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+}
+
+
+.card-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 55px;
+
+}
+
+
+.darshan-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 29px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.darshan-card p {
+
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    font-size: 13px;
+
+}
+
+
+.darshan-card a {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.official-note {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    display: flex;
+
+    gap: 18px;
+
+    background: rgba(232,121,47,.08);
+
+    border: 1px solid rgba(232,121,47,.2);
+
+}
+
+
+.official-note > span {
+
+    font-size: 22px;
+
+}
+
+
+.official-note strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+}
+
+
+.official-note p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ================= VISITOR ================= */
+
+.visitor-section h2 {
+
+    margin-bottom: 60px;
+
+}
+
+
+.visitor-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 0 70px;
+
+}
+
+
+.visitor-item {
+
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    gap: 20px;
+
+    padding: 30px 0;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.visitor-item > span {
+
+    font-size: 25px;
+
+}
+
+
+.visitor-item h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.visitor-item p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= LOCATION ================= */
+
+.location-section {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+    background: var(--dark);
+
+    color: white;
+
+    width: 100%;
+
+    padding-left: max(
+        40px,
+        calc((100vw - 1300px) / 2)
+    );
+
+    padding-right: max(
+        40px,
+        calc((100vw - 1300px) / 2)
+    );
+
+}
+
+
+.location-content p {
+
+    color: #999;
+
+    line-height: 1.8;
+
+    max-width: 450px;
+
+    margin: 30px 0;
+
+}
+
+
+.map-button {
+
+    display: inline-block;
+
+    padding: 15px 22px;
+
+    background: var(--orange);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.map-placeholder {
+
+    min-height: 400px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #303331,
+            #181a1a
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+}
+
+
+.map-pin {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.map-placeholder strong {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+}
+
+
+.map-placeholder span {
+
+    color: #888;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+}
+
+
+/* ================= OFFICIAL ================= */
+
+.official-section {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+}
+
+
+.official-links a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+
+    transition: .3s;
+
+}
+
+
+.official-links a:hover {
+
+    color: var(--orange);
+
+    padding-left: 8px;
+
+}
+
+
+/* ================= NEARBY ================= */
+
+.nearby-section {
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.nearby-section h2 {
+
+    margin-bottom: 55px;
+
+}
+
+
+.nearby-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.nearby-card {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 45px 1fr 25px;
+
+    gap: 15px;
+
+    align-items: center;
+
+    transition: .3s;
+
+}
+
+
+.nearby-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--orange);
+
+}
+
+
+.nearby-card > span {
+
+    font-size: 28px;
+
+}
+
+
+.nearby-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+}
+
+
+.nearby-card p {
+
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 4px;
+
+}
+
+
+.nearby-card strong {
+
+    font-size: 18px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    background: #0c0d0d;
+
+    color: white;
+
+    padding:
+        70px max(
+            40px,
+            calc((100vw - 1300px) / 2)
+        ) 30px;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.footer-logo > span {
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #555;
+
+    display: grid;
+
+    place-items: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+}
+
+
+.footer-logo strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.footer-logo small {
+
+    font-size: 7px;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+}
+
+
+footer > p {
+
+    color: #777;
+
+    font-size: 12px;
+
+    margin: 25px 0 60px;
+
+}
+
+
+.footer-bottom {
+
+    border-top: 1px solid #252525;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 10px;
+
+}
+
+
+.footer-bottom a:hover {
+
+    color: white;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .temple-navbar {
+
+        padding: 20px;
+
+    }
+
+
+    .mini-logo {
+
+        display: none;
+
+    }
+
+
+    .hero-content {
+
+        width: calc(100% - 40px);
+
+    }
+
+
+    .quick-info {
+
+        width: calc(100% - 30px);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .info-card:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+
+    .info-card:nth-child(1),
+    .info-card:nth-child(2) {
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .about-grid,
+    .darshan-heading,
+    .location-section,
+    .official-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .darshan-grid,
+    .nearby-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .visitor-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .book-button {
+
+        padding: 9px 12px;
+
+        font-size: 9px;
+
+    }
+
+
+    .temple-hero {
+
+        min-height: 85vh;
+
+    }
+
+
+    .hero-content {
+
+        padding-bottom: 65px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size: 62px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .page-section {
+
+        width: calc(100% - 35px);
+
+        padding-top: 80px;
+
+        padding-bottom: 80px;
+
+    }
+
+
+    .darshan-section,
+    .location-section {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .quick-info {
+
+        width: calc(100% - 25px);
+
+    }
+
+
+    .info-card {
+
+        padding: 20px;
+
+    }
+
+
+    .info-card strong {
+
+        font-size: 17px;
+
+    }
+
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}
